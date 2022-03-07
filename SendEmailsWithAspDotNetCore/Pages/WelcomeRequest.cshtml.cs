@@ -4,11 +4,11 @@ using SendEmailsWithAspDotNetCore.Models;
 
 namespace SendEmailsWithAspDotNetCore.Pages
 {
-    public class MailRequestModel : PageModel
+    public class WelcomeRequestModel : PageModel
     {
-        private readonly ILogger<MailRequestModel> _logger;
+        private readonly ILogger<WelcomeRequestModel> _logger;
         private readonly IMailService mailService;
-        public MailRequestModel(ILogger<MailRequestModel> logger, IMailService mailService)
+        public WelcomeRequestModel(ILogger<WelcomeRequestModel> logger, IMailService mailService)
         {
             _logger = logger;
             this.mailService = mailService;
@@ -18,12 +18,12 @@ namespace SendEmailsWithAspDotNetCore.Pages
         {
 
         }
-        public MailRequest MailRequest { get; set; }
-        public async Task<IActionResult> OnPost([FromForm] MailRequest request)
+        public WelcomeRequest WelcomeRequest { get; set; }
+        public async Task<IActionResult> OnPost([FromForm] WelcomeRequest welcomeRequest)
         {
             try
             {
-                await mailService.SendEmailAsync(request);
+                await mailService.SendWelcomeEmailAsync(welcomeRequest);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
