@@ -1,7 +1,7 @@
 # SendEmails_With_AspDotNet_Core_And_Six
 
-#Table of Contents	
-Step 1 – Create a New ASP.NET Core Project
+# Table of Contents	
+## Step 1 – Create a New ASP.NET Core Project
 Step 2 – Add the Required Mail Models
 Step 3 – Configure Mail Settings in appsettings.json
 Quick Tip to Secure Sensitive Data
